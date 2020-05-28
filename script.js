@@ -16,4 +16,17 @@ function renderTodos() {
     todoList.appendChild(li);
   }
 };
+
+todoForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  var newTodoText = todoInput.value;
+  
+  if (todoInput.value === "") {
+    return
+  }
+  todos.push(newTodoText);
+  todoInput.value = "";
+  renderTodos();
+});
+
 renderTodos()
